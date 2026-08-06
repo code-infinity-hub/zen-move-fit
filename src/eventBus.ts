@@ -1,0 +1,45 @@
+import mitt from "mitt";
+import type { AccelListenerEvent, MeasurementEvent, OrientationListenerEvent } from "@/mobile";
+
+export type Events = {
+  SNACKBAR: { message: string, icon?: string, color?: string },
+  SET_FULLSCREEN: { enabled: boolean },
+  SET_LOADER: { enabled: boolean },
+  STATUS_BAR: { show?: boolean, color?: string },
+  NAVIGATION_BAR: { show?: boolean, color?: string },
+  LOCATION: {
+    lat: number,
+    lng: number,
+    accuracy: number,
+    altitude: number,
+    altitudeAccuracy: number,
+    speed: number,
+    time: number,
+    bearing: number,
+  },
+  SHOW_IMAGE: { images: string[] },
+  OPEN_CHAT: { friendship_id: string },
+  ACCEL_MOTION_EVENT: AccelListenerEvent,
+  ORIENTATION_MOTION_EVENT: OrientationListenerEvent,
+  MEASUREMENT_EVENT: MeasurementEvent,
+  MAINTENANCE_MODE: { message: string },
+  MESSAGE_NO_INTERNET_CONNECTION: undefined,
+  FINISH_APP: undefined,
+  BACK_BUTTON: undefined,
+  START_SUBSCRIPTION: undefined,
+  CREATE_PLAN: undefined,
+  NO_CONNECTION: undefined,
+  SAVE_OFFLINE_ACTIVITY: undefined,
+  RELOAD_ACTIVITIES: undefined,
+  UPDATE_APP_ICONS: undefined,
+  BACK_ROUTER: undefined,
+  OPEN_PREMIUM_SHEET: undefined,
+  CHECK_ACHIEVEMENTS: undefined,
+  CHECK_CHESTS: undefined,
+  CHECK_LEAGUE_RESULT: undefined,
+  OPEN_RESCUE_ACTIVITY: undefined,
+  SESSION_EXPIRED: undefined,
+  TAKE_SCREENSHOT: undefined,
+};
+
+export const eventBus = mitt<Events>();

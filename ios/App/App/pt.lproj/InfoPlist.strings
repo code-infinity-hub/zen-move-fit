@@ -1,0 +1,10 @@
+"NSCameraUsageDescription" = "O app precisa de acesso à câmera para capturar fotos e vídeos das suas atividades e publicações.";
+"NSPhotoLibraryUsageDescription" = "O app precisa de acesso à sua biblioteca de fotos para selecionar imagens para o perfil, publicações e cards de compartilhamento.";
+"NSPhotoLibraryAddUsageDescription" = "O app precisa de permissão para salvar fotos e vídeos na sua biblioteca.";
+"NSLocationWhenInUseUsageDescription" = "O app precisa de acesso à sua localização enquanto estiver em uso para registrar suas atividades e treinos.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "O app precisa de acesso à sua localização para registrar suas atividades e treinos mesmo com a tela bloqueada ou em segundo plano.";
+"NSMotionUsageDescription" = "O app precisa de acesso aos dados de movimento para contar seus passos e monitorar suas atividades.";
+"NSHealthShareUsageDescription" = "O app lê seus dados de saúde para personalizar suas atividades e acompanhar seu progresso.";
+"NSHealthUpdateUsageDescription" = "O app grava no Saúde os dados das atividades que você realiza na Zen Move Fit.";
+"NSMicrophoneUsageDescription" = "O app precisa de acesso ao microfone para gravar áudio e usar recursos de voz.";
+"NSSpeechRecognitionUsageDescription" = "O app precisa de acesso ao reconhecimento de fala para converter sua voz em texto.";

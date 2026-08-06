@@ -1,0 +1,7 @@
+[
+  { "type": "RUNNING", "icon": "mdi-run" },
+  { "type": "TRAIL_RUNNING", "icon": "mdi-hiking" },
+  { "type": "WALKING", "icon": "mdi-shoe-print" },
+  { "type": "CYCLING", "icon": "mdi-bike" },
+  { "type": "BELT", "icon": "mdi-run-fast" }
+]

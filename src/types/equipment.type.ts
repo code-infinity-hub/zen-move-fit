@@ -1,0 +1,17 @@
+export interface Equipment {
+  _id: string,
+  created_at: string,
+  used: number,
+  type: "tennis" | "bicycle",
+  mark: string,
+  model: string,
+  nickname: string,
+  notes: string,
+  standard_sports: string[],
+  warn?: boolean,
+  mileage?: number,
+  retiree: boolean,
+  alert_dismissed?: boolean,
+  bicycle_type?: "mountain_biking" | "cross_bike" | "road_bike" | "tt_bike" | "gravel_bile",
+  weight?: number,
+};

@@ -1,0 +1,18 @@
+export { calculatePercentageXp } from "./calculate-percentage-xp";
+export { FORMAT_DIMENSIONS, FORMAT_HEIGHTS, cardDimStyle, getCardStyle } from "./share-renderer";
+export { createConfetti } from "./create-confetti";
+export { fileToBase64 } from "./file-to-base64";
+export { getAbbreviationTime } from "./get-abbreviation-time-type";
+export { getActivityDurationSeconds } from "./get-activity-duration-seconds";
+export { detectSuspensionGap } from "./detect-suspension-gap";
+export { getPrimaryDurationSeconds } from "./get-primary-duration-seconds";
+export { isDeepEqual } from "./is-deep-equal";
+export { observerScroll } from "./observer-scroll";
+export { date } from "./date";
+export { formatDuration } from "./format-duration";
+export { formatPaceDiff } from "./format-pace-diff";
+export { mobileEvents } from "./mobile-events";
+export { parseCommentContent } from "./parse-comment-content";
+export { youtube } from "./youtube";
+export { projectRoute, toPolylinePoints, toSmoothPath, getRouteMarkers } from "./route-projection";
+export { updateReactionSummary, removeFromReactionSummary, snapshotReactions } from "./social-manager";

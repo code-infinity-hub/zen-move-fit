@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "89121824115",
+    "project_id": "zen-move-fit",
+    "storage_bucket": "zen-move-fit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89121824115:android:cdb76b16e97ef68c317906",
+        "android_client_info": {
+          "package_name": "com.zen_move_fit.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz6RjAE9eslCv0nPzi73VhV82oa8AczK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,123 @@
+@use "vuetify/settings" with (
+  $body-font-family: ("Inter", sans-serif),
+  $button-border-radius: 0.785rem,
+  $button-elevation: ("default": 0)
+)
+
+@font-face
+  font-family: "Space Grotesk"
+  src: url("@/assets/fonts/space-grotesk-regular.ttf") format("truetype")
+
+body, html
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.font-space-grotesk
+  font-family: "Space Grotesk"
+
+.v-overlay--active
+  z-index: 10001 !important
+
+.v-snackbar__wrapper
+  top: calc(100vh - 85px - var(--bottom-saved))
+
+  .v-snackbar__content
+    border: 1px solid var(--tertiary)
+    border-radius: 8px
+
+.v-field
+  border-radius: 0.875rem
+
+input, textarea
+  caret-color: var(--primary)
+
+.v-field--variant-solo
+  &.v-field--focused
+    border: 1px solid var(--primary)
+
+.v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content
+  box-shadow: 0 0 0
+
+.v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-card, .v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-sheet
+  width: 95%
+  margin-left: 2.5%
+  background-color: var(--secondary)
+  border: 2px solid var(--tertiary)
+  border-bottom-width: 0
+  border-top-left-radius: 24px
+  border-top-right-radius: 24px
+  padding-bottom: var(--bottom-saved)
+
+.bg-theme-primary-15
+  background-color: color-mix(in srgb, var(--primary) 15%, transparent)
+
+.bg-theme-primary-background-10
+  background-image: linear-gradient(to bottom right, color-mix(in srgb, var(--primary) 10%, transparent), var(--secondary))
+
+.bg-theme-background-80
+  background-color: color-mix(in srgb, var(--secondary) 80%, transparent)
+
+.bg-theme-tertiary-40
+  background-color: color-mix(in srgb, var(--tertiary) 40%, transparent)
+
+.size-2rem
+  width: 2rem
+  height: 2rem
+
+.size-2-2rem
+  width: 2.2rem
+  height: 2.2rem
+
+.size-2-5rem
+  width: 2.5rem
+  height: 2.5rem
+
+.size-3rem
+  width: 3rem
+  height: 3rem
+
+.size-3-5rem
+  width: 3.5rem
+  height: 3.5rem
+
+.size-4rem
+  width: 4rem
+  height: 4rem
+
+.size-7rem
+  width: 7rem
+  height: 7rem
+
+.size-11rem
+  width: 11rem
+  height: 11rem
+
+.viewer-button
+  top: 0
+
+.viewer-footer
+  bottom: var(--bottom-saved)
+
+.border-sextet
+  border: 1px solid var(--sextet) !important
+
+.border-tertiary
+  border: 1px solid var(--tertiary) !important
+
+.heading
+  padding: var(--top-saved) 0.7rem 0.5rem 0.7rem !important
+
+.footering
+  padding: 0.7rem 0.5rem calc(var(--bottom-saved) + 0.3rem) 0.5rem !important
+
+.border-top-tertiary
+  border-top: 1px solid var(--tertiary) !important
+
+.border-bottom-tertiary
+  border-bottom: 1px solid var(--tertiary) !important
+
+.background
+  background-position: center !important
+  background-size: cover !important

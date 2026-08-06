@@ -1,0 +1,10 @@
+"NSCameraUsageDescription" = "The app needs access to the camera to capture photos and videos for your activities and posts.";
+"NSPhotoLibraryUsageDescription" = "The app needs access to your photo library to select images for your profile, posts and share cards.";
+"NSPhotoLibraryAddUsageDescription" = "The app needs permission to save photos and videos to your library.";
+"NSLocationWhenInUseUsageDescription" = "The app needs access to your location while in use to track your activities and workouts.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "The app needs access to your location to track your activities and workouts even when your screen is locked or the app is in the background.";
+"NSMotionUsageDescription" = "The app needs access to motion data to count your steps and track your activities.";
+"NSHealthShareUsageDescription" = "The app reads your health data to personalize your activities and track your progress.";
+"NSHealthUpdateUsageDescription" = "The app writes your Zen Move Fit activity data to Health.";
+"NSMicrophoneUsageDescription" = "The app needs access to the microphone to record audio and use voice features.";
+"NSSpeechRecognitionUsageDescription" = "The app needs access to speech recognition to convert your voice into text.";
