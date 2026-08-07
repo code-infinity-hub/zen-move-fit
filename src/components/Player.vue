@@ -93,7 +93,7 @@ onMounted(async () => {
         });
 
       // Sai do fullscreen nativo do iOS zera o safe-area do WKWebView de forma transitória
-      (player.value!.media as HTMLVideoElement).addEventListener(
+      ((player.value as any)!.media as HTMLVideoElement).addEventListener(
         "webkitendfullscreen",
         () => eventBus.emit("REFRESH_SAFE_AREA")
       );
