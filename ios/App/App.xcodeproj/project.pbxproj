@@ -11,14 +11,18 @@
 		132631C73025934E00E448E1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132631C63025934E00E448E1 /* SwiftUI.framework */; };
 		132631D63025935100E448E1 /* LiveActivitiesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 132631C33025934E00E448E1 /* LiveActivitiesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2FAD9763203C412B000D30F8 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9762203C412B000D30F8 /* config.xml */; };
+		364429BCF0C0564777F826C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C2BA53554D237D9706F12 /* MainViewController.swift */; };
 		421EBD33F77586B40FE27524 /* RunLiveActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4305ED1B788602EA79D3F8 /* RunLiveActivityPlugin.swift */; };
 		50379B232058CBB4000EE86E /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 50379B222058CBB4000EE86E /* capacitor.config.json */; };
 		504EC3081FED79650016851F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC3071FED79650016851F /* AppDelegate.swift */; };
-		364429BCF0C0564777F826C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C2BA53554D237D9706F12 /* MainViewController.swift */; };
+		FE3DDEC6638EEF2AF3F9B031 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7F8491D9FF8A06C0C457B /* FirebaseAnalytics.swift */; };
+		9E1161DB399D6085414656F5 /* FirebaseAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD29D904C3558C94C6C4BC /* FirebaseAnalyticsHelper.swift */; };
+		10FF2AF7E9EEF97B6322BC0D /* FirebaseAnalyticsPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A9610A4B67C3C0E02965E /* FirebaseAnalyticsPlugin.swift */; };
 		504EC30D1FED79650016851F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC30B1FED79650016851F /* Main.storyboard */; };
 		504EC30F1FED79650016851F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504EC30E1FED79650016851F /* Assets.xcassets */; };
 		504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC3101FED79650016851F /* LaunchScreen.storyboard */; };
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
+		83F75B7403D60CA68701C1F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DE09AFD5795B6C082DE82C1 /* GoogleService-Info.plist */; };
 		A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */; };
 		D18B484611D0C846A13DA6A3 /* RunActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACB1DFCBFE2D6AE61A4166 /* RunActivityAttributes.swift */; };
 		E1A2B3C4D5E6F708192A3B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1A2B3C4D5E6F708192A3B4E /* InfoPlist.strings */; };
@@ -49,16 +53,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DE09AFD5795B6C082DE82C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		132631C33025934E00E448E1 /* LiveActivitiesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivitiesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		132631C43025934E00E448E1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		132631C63025934E00E448E1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		132631DC302593AF00E448E1 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		132631DD302593F500E448E1 /* LiveActivitiesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiveActivitiesExtension.entitlements; sourceTree = "<group>"; };
+		138A067B3025BC0C004358DC /* cash.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cash.caf; sourceTree = "<group>"; };
+		138A067C3025BC0C004358DC /* notification.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notification.wav; sourceTree = "<group>"; };
 		2FAD9762203C412B000D30F8 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		50379B222058CBB4000EE86E /* capacitor.config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capacitor.config.json; sourceTree = "<group>"; };
 		504EC3041FED79650016851F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504EC3071FED79650016851F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E45C2BA53554D237D9706F12 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		17C7F8491D9FF8A06C0C457B /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		D8CD29D904C3558C94C6C4BC /* FirebaseAnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsHelper.swift; sourceTree = "<group>"; };
+		982A9610A4B67C3C0E02965E /* FirebaseAnalyticsPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsPlugin.swift; sourceTree = "<group>"; };
 		504EC30C1FED79650016851F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		504EC30E1FED79650016851F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		504EC3111FED79650016851F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,11 +79,12 @@
 		D3ACB1DFCBFE2D6AE61A4166 /* RunActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunActivityAttributes.swift; sourceTree = "<group>"; };
 		E1A2B3C4D5E6F708192A3B4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1A2B3C4D5E6F708192A3B4D /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E45C2BA53554D237D9706F12 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC68EB0AF532CFC21C3344DD /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		132631DA3025935100E448E1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		132631DA3025935100E448E1 /* Exceptions for "LiveActivities" folder in "LiveActivitiesExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -84,7 +94,18 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		132631C83025934E00E448E1 /* LiveActivities */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (132631DA3025935100E448E1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = LiveActivities; sourceTree = "<group>"; };
+		132631C83025934E00E448E1 /* LiveActivities */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				132631DA3025935100E448E1 /* Exceptions for "LiveActivities" folder in "LiveActivitiesExtension" target */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = LiveActivities;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +129,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		138A067D3025BC0C004358DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				138A067B3025BC0C004358DC /* cash.caf */,
+				138A067C3025BC0C004358DC /* notification.wav */,
+			);
+			name = Resources;
+			path = App/Resources;
+			sourceTree = "<group>";
+		};
 		27E2DDA53C4D2A4D1A88CE4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				138A067D3025BC0C004358DC /* Resources */,
 				AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */,
 				132631C43025934E00E448E1 /* WidgetKit.framework */,
 				132631C63025934E00E448E1 /* SwiftUI.framework */,
@@ -145,7 +177,9 @@
 				132631DC302593AF00E448E1 /* App.entitlements */,
 				50379B222058CBB4000EE86E /* capacitor.config.json */,
 				504EC3071FED79650016851F /* AppDelegate.swift */,
+				0DE09AFD5795B6C082DE82C1 /* GoogleService-Info.plist */,
 				E45C2BA53554D237D9706F12 /* MainViewController.swift */,
+				A3BE7EBE39E91572488EA799 /* FirebaseAnalyticsPlugin */,
 				D3ACB1DFCBFE2D6AE61A4166 /* RunActivityAttributes.swift */,
 				7F4305ED1B788602EA79D3F8 /* RunLiveActivityPlugin.swift */,
 				504EC30B1FED79650016851F /* Main.storyboard */,
@@ -168,6 +202,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A3BE7EBE39E91572488EA799 /* FirebaseAnalyticsPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				17C7F8491D9FF8A06C0C457B /* FirebaseAnalytics.swift */,
+				D8CD29D904C3558C94C6C4BC /* FirebaseAnalyticsHelper.swift */,
+				982A9610A4B67C3C0E02965E /* FirebaseAnalyticsPlugin.swift */,
+			);
+			path = FirebaseAnalyticsPlugin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,8 +231,6 @@
 				132631C83025934E00E448E1 /* LiveActivities */,
 			);
 			name = LiveActivitiesExtension;
-			packageProductDependencies = (
-			);
 			productName = LiveActivitiesExtension;
 			productReference = 132631C33025934E00E448E1 /* LiveActivitiesExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -266,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F75B7403D60CA68701C1F5 /* GoogleService-Info.plist in Resources */,
 				504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */,
 				50B271D11FEDC1A000F3C39B /* public in Resources */,
 				504EC30F1FED79650016851F /* Assets.xcassets in Resources */,
@@ -342,6 +385,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
+				FE3DDEC6638EEF2AF3F9B031 /* FirebaseAnalytics.swift in Sources */,
+				9E1161DB399D6085414656F5 /* FirebaseAnalyticsHelper.swift in Sources */,
+				10FF2AF7E9EEF97B6322BC0D /* FirebaseAnalyticsPlugin.swift in Sources */,
 				364429BCF0C0564777F826C9 /* MainViewController.swift in Sources */,
 				D18B484611D0C846A13DA6A3 /* RunActivityAttributes.swift in Sources */,
 				421EBD33F77586B40FE27524 /* RunLiveActivityPlugin.swift in Sources */,
@@ -583,6 +629,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = App/Resources;
 				DEVELOPMENT_TEAM = F2B2BWLKZ9;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Zen Move Fit";
@@ -609,6 +656,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = App/Resources;
 				DEVELOPMENT_TEAM = F2B2BWLKZ9;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Zen Move Fit";

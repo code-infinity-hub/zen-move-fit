@@ -397,11 +397,15 @@ document.addEventListener("deviceready", async () => {
   });
 
   await Promise.all([
-    EdgeToEdge.disable(),
-    BackgroundMode.enable({
-      title: t("$vuetify.message.the_app_is_in_background_mode"),
-      text: t("$vuetify.message.app_will_start_faster")
-    }),
+    ...(device.platform === "android" ?
+      [
+        EdgeToEdge.disable(),
+        BackgroundMode.enable({
+          title: t("$vuetify.message.the_app_is_in_background_mode"),
+          text: t("$vuetify.message.app_will_start_faster")
+        })
+      ] :
+      []),
     FirebaseAnalytics.setEnabled({ enabled: true })
   ]);
 

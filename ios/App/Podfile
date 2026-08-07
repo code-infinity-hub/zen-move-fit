@@ -13,7 +13,6 @@ def capacitor_pods
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'AnuradevCapacitorBackgroundMode', :path => '../../node_modules/@anuradev/capacitor-background-mode'
   pod 'CapacitorCommunitySqlite', :path => '../../node_modules/@capacitor-community/sqlite'
-  pod 'CapacitorFirebaseAnalytics/AnalyticsWithoutAdIdSupport', :path => '../../node_modules/@capacitor-firebase/analytics'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
   pod 'CapacitorCamera', :path => '../../node_modules/@capacitor/camera'
   pod 'CapacitorDevice', :path => '../../node_modules/@capacitor/device'
@@ -50,6 +49,11 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
+  # CapacitorFirebaseAnalytics gera um target Aggregate vazio no CocoaPods (bug de resolução
+  # do podspec com subspecs) — o plugin nunca é compilado. Trazemos os arquivos Swift do
+  # plugin direto pro target App (ver ios/App/App/FirebaseAnalyticsPlugin/) e dependemos só
+  # do SDK real do Firebase aqui.
+  pod 'FirebaseAnalytics/Core', '~> 12.7.0'
 end
 
 post_install do |installer|
