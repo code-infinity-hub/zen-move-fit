@@ -815,14 +815,14 @@ const createAppIcons = async () => {
                 title: t("$vuetify.label.login"),
                 description: t("$vuetify.label.log_in_to_account"),
                 androidIcon: await fileToBase64(LoginIcon),
-                iosIcon: await fileToBase64(LoginIcon)
+                iosIcon: "LoginIcon"
               },
               {
                 id: "register",
                 title: t("$vuetify.label.create_account"),
                 description: t("$vuetify.label.create_account"),
                 androidIcon: await fileToBase64(RegisterIcon),
-                iosIcon: await fileToBase64(RegisterIcon)
+                iosIcon: "RegisterIcon"
               }
             ] :
             [
@@ -831,21 +831,21 @@ const createAppIcons = async () => {
                 title: t("$vuetify.label.register_workout"),
                 description: t("$vuetify.label.register_workout"),
                 androidIcon: await fileToBase64(RegisterTrainingIcon),
-                iosIcon: await fileToBase64(RegisterTrainingIcon)
+                iosIcon: "RegisterTrainingIcon"
               },
               {
                 id: "register_activity",
                 title: t("$vuetify.label.register_activity"),
                 description: t("$vuetify.label.register_activity"),
                 androidIcon: await fileToBase64(RegisterActivityIcon),
-                iosIcon: await fileToBase64(RegisterActivityIcon)
+                iosIcon: "RegisterActivityIcon"
               },
               {
                 id: "register_meal",
                 title: t("$vuetify.label.register_meal"),
                 description: t("$vuetify.label.register_meal"),
                 androidIcon: await fileToBase64(RegisterMealIcon),
-                iosIcon: await fileToBase64(RegisterMealIcon)
+                iosIcon: "RegisterMealIcon"
               },
             ]
         )
