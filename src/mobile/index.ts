@@ -28,6 +28,7 @@ export { NativeSettings, AndroidSettings, IOSSettings } from "capacitor-native-s
 export { Network } from "@capacitor/network";
 export { PowerMode } from "power-mode";
 export { Preferences } from "@capacitor/preferences";
+export { RunLiveActivity } from "./run-live-activity";
 export { SafeArea } from "capacitor-plugin-safe-area";
 export { ScreenOrientation } from "@capacitor/screen-orientation";
 export { ScreenshotEvent } from "@rdlabo/capacitor-screenshot-event";

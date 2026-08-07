@@ -6,6 +6,7 @@ export { getAbbreviationTime } from "./get-abbreviation-time-type";
 export { getActivityDurationSeconds } from "./get-activity-duration-seconds";
 export { detectSuspensionGap } from "./detect-suspension-gap";
 export { getPrimaryDurationSeconds } from "./get-primary-duration-seconds";
+export { mdiToSfSymbol } from "./mdi-to-sf-symbol";
 export { isDeepEqual } from "./is-deep-equal";
 export { observerScroll } from "./observer-scroll";
 export { date } from "./date";

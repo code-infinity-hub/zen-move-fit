@@ -7,6 +7,7 @@ export { useForm } from "./use-form";
 export { useFormatNumber } from "./use-format-number";
 export { useGameSounds } from "./use-game-sounds";
 export { useFitText } from "./use-fit-text";
+export { useLiveActivity } from "./use-live-activity";
 export { useLogout } from "./use-logout";
 export { useMentionInput } from "./use-mention-input";
 export { usePullToRefresh } from "./use-pull-to-refresh";

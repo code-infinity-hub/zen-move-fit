@@ -96,6 +96,9 @@
 		<string>location</string>
 	</array>
 
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+
 	<key>NSCameraUsageDescription</key>
 	<string>O app precisa de acesso à câmera para capturar fotos e vídeos das suas atividades e publicações.</string>
 

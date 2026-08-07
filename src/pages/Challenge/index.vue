@@ -634,8 +634,8 @@ import { usePersistentSession } from "@/plugins/usePersistentSession";
 import { eventBus } from "@/eventBus";
 import { GeolocationService } from "@/services/geolocation.service";
 import { WorkoutService } from "@/services/workout.service";
-import { CordovaNotifications, Device, LocalNotifications } from "@/mobile";
-import { useFormatNumber } from "@/composables";
+import { Capacitor, CordovaNotifications, Device, LocalNotifications } from "@/mobile";
+import { useFormatNumber, useLiveActivity } from "@/composables";
 import {
   getActivityDurationSeconds,
   getAbbreviationTime,
@@ -728,6 +728,7 @@ let isCreatingNotification = false;
 
 const geolocationService = new GeolocationService;
 const workoutService = new WorkoutService;
+const liveActivity = useLiveActivity();
 
 let startedBackgroundGeolocation = false;
 
@@ -898,6 +899,7 @@ onBeforeUnmount(() => {
   CordovaNotifications.un("JUMP_REST", jumpRest);
 
   CordovaNotifications.cancelNotification(notificationId.value);
+  endLiveActivity();
 
   eventBus.off("LOCATION", handleReceivedLocation);
 
@@ -968,22 +970,30 @@ const handleInterval = async () => {
   }
 
   if (started.value) {
-    const triggered = await CordovaNotifications.isTriggeredNotification(notificationId.value);
+    if (Capacitor.getPlatform() === "ios") {
+      if (liveActivity.active.value) {
+        updateLiveActivity();
+      } else {
+        await startLiveActivity();
+      }
+    } else {
+      const triggered = await CordovaNotifications.isTriggeredNotification(notificationId.value);
 
-    if (
-      !triggered &&
-      isMobile &&
-      hasNotificationPermission.value &&
-      !isCreatingNotification
-    ) {
-      isCreatingNotification = true;
-      await CordovaNotifications.cancelNotification(notificationId.value);
+      if (
+        !triggered &&
+        isMobile &&
+        hasNotificationPermission.value &&
+        !isCreatingNotification
+      ) {
+        isCreatingNotification = true;
+        await CordovaNotifications.cancelNotification(notificationId.value);
 
-      notificationId.value = CordovaNotifications.createId();
+        notificationId.value = CordovaNotifications.createId();
 
-      await startNotification();
-    } else if (triggered) {
-      updateNotification();
+        await startNotification();
+      } else if (triggered) {
+        updateNotification();
+      }
     }
 
     persistentSession.set("last-update-time", dayjs().toISOString());
@@ -1067,6 +1077,7 @@ const startTraining = async (fromZero = true) => {
   ]);
 
   await startNotification();
+  await startLiveActivity();
   hasCreatedNotification.value = true;
 
   const permission = await geolocationService.checkPermissions();
@@ -1105,6 +1116,7 @@ const togglePause = async () => {
     await CordovaNotifications.cancelNotification(notificationId.value);
     notificationId.value = CordovaNotifications.createId();
     startNotification();
+    updateLiveActivity();
   }
 };
 
@@ -1124,8 +1136,34 @@ const bodyNotification = () => {
   };
 };
 
+const bodyLiveActivity = () => ({
+  durationSeconds: activity.value.duration_seconds,
+  statusLabel: resting.value ?
+    `${t("$vuetify.label.resting")}: ${timeResting.value}s` :
+    paused.value ? t("$vuetify.label.training_paused") : "",
+  subtitle: currentExercise.value?.name || "",
+  stat1: `${indexExercise.value}/${totalExercises.value}`,
+  stat2: `${formatNumber(kcal.value, "decimal")} ${t("$vuetify.label.kcal_abbreviation")}`
+});
+
+const startLiveActivity = async () => {
+  await liveActivity.start({
+    title: t("$vuetify.label.challenge_of_the_day"),
+    icon: "trophy.fill",
+    ...bodyLiveActivity()
+  });
+};
+
+const updateLiveActivity = async () => {
+  await liveActivity.update(bodyLiveActivity());
+};
+
+const endLiveActivity = async () => {
+  await liveActivity.end();
+};
+
 const startNotification = async () => {
-  if (isMobile.value && hasNotificationPermission.value) {
+  if (isMobile.value && hasNotificationPermission.value && Capacitor.getPlatform() !== "ios") {
     if (!hasCreatedNotification.value) {
       CordovaNotifications.on("TOGGLE_PAUSE", togglePause);
       CordovaNotifications.on("JUMP_REST", jumpRest);
@@ -1153,7 +1191,7 @@ const startNotification = async () => {
 const updateNotification = async () => {
   const triggered = await CordovaNotifications.isTriggeredNotification(notificationId.value);
 
-  if (isMobile.value && hasNotificationPermission.value && triggered) {
+  if (isMobile.value && hasNotificationPermission.value && triggered && Capacitor.getPlatform() !== "ios") {
     await CordovaNotifications.createActions("PAUSE", [{
       id: "TOGGLE_PAUSE",
       title: t(`$vuetify.label.${paused.value ? "resume" : "pause"}`)
@@ -1315,6 +1353,7 @@ const endActivity = () => {
   const endedAt = dayjs().toISOString();
 
   CordovaNotifications.cancelNotification(notificationId.value);
+  endLiveActivity();
 
   activity.value.ended_at = endedAt;
   activity.value.status = "DONE";

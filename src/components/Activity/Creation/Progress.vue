@@ -562,6 +562,7 @@ import {
   LinearScale,
 } from "chart.js";
 import {
+  Capacitor,
   CapacitorPedometer,
   CordovaNotifications,
   Device,
@@ -577,7 +578,8 @@ import { MapService } from "@/services/map.service";
 import { RunningMetricsService } from "@/services/running-metrics.service";
 import { SensorsService } from "@/services/sensors.service";
 import { useFormatNumber } from "@/composables/use-format-number.ts";
-import { getActivityDurationSeconds, detectSuspensionGap, date } from "@/utils";
+import { useLiveActivity } from "@/composables/use-live-activity";
+import { getActivityDurationSeconds, detectSuspensionGap, date, mdiToSfSymbol } from "@/utils";
 import { eventBus } from "@/eventBus";
 import { usePersistentSession } from "@/plugins/usePersistentSession";
 import type { Events } from "@/eventBus";
@@ -680,6 +682,7 @@ const openSettings = ref(false);
 
 const mapService = new MapService();
 const geolocationService = new GeolocationService();
+const liveActivity = useLiveActivity();
 let runningService: RunningMetricsService;
 let userMarker: Marker;
 
@@ -1022,6 +1025,8 @@ onBeforeUnmount(() => {
     CordovaNotifications.cancelNotification(notificationId.value);
   }
 
+  endLiveActivity();
+
   geolocationService.stopBackgroundGeolocation();
 
   if (timer !== null) clearTimeout(timer);
@@ -1168,6 +1173,7 @@ const togglePause = async () => {
   await CordovaNotifications.cancelNotification(notificationId.value);
   notificationId.value = CordovaNotifications.createId();
   startNotification();
+  updateLiveActivity();
 };
 
 const bodyNotification = () => {
@@ -1183,7 +1189,7 @@ const bodyNotification = () => {
 };
 
 const startNotification = async () => {
-  if (isMobile.value && hasNotificationPermission.value) {
+  if (isMobile.value && hasNotificationPermission.value && Capacitor.getPlatform() !== "ios") {
     if (!hasCreatedNotification.value) {
       CordovaNotifications.on("TOGGLE_PAUSE", togglePause);
     }
@@ -1208,7 +1214,7 @@ const startNotification = async () => {
 const updateNotification = async () => {
   const triggered = await CordovaNotifications.isTriggeredNotification(notificationId.value);
 
-  if (isMobile.value && hasNotificationPermission.value && triggered) {
+  if (isMobile.value && hasNotificationPermission.value && triggered && Capacitor.getPlatform() !== "ios") {
     await CordovaNotifications.createActions("PAUSE", [{
       id: "TOGGLE_PAUSE",
       title: t(`$vuetify.label.${paused.value ? "resume" : "pause"}`)
@@ -1216,6 +1222,29 @@ const updateNotification = async () => {
 
     await CordovaNotifications.updateNotification(bodyNotification());
   }
+};
+
+const bodyLiveActivity = () => ({
+  durationSeconds: activity.value.duration_seconds,
+  statusLabel: paused.value ? t("$vuetify.label.activity_paused") : "",
+  stat1: `${distance.value} ${t("$vuetify.label.km")}`,
+  stat2: rhythm.value
+});
+
+const startLiveActivity = async () => {
+  await liveActivity.start({
+    title: categorySelection.value.label,
+    icon: mdiToSfSymbol(categorySelection.value.icon),
+    ...bodyLiveActivity()
+  });
+};
+
+const updateLiveActivity = async () => {
+  await liveActivity.update(bodyLiveActivity());
+};
+
+const endLiveActivity = async () => {
+  await liveActivity.end();
 };
 
 const backButton = () => {
@@ -1229,6 +1258,7 @@ const backButton = () => {
 const cancel = async () => {
   if (isRunning.value) {
     CordovaNotifications.cancelNotification(notificationId.value);
+    endLiveActivity();
 
     await runningService?.destroy();
     await removeAllData();
@@ -1250,22 +1280,30 @@ const updateActivity = async () => {
 
   await checkSuspensionGap(now);
 
-  const triggered = await CordovaNotifications.isTriggeredNotification(notificationId.value);
+  if (Capacitor.getPlatform() === "ios") {
+    if (liveActivity.active.value) {
+      updateLiveActivity();
+    } else {
+      await startLiveActivity();
+    }
+  } else {
+    const triggered = await CordovaNotifications.isTriggeredNotification(notificationId.value);
 
-  if (
-    !triggered &&
-    isMobile.value &&
-    hasNotificationPermission.value &&
-    !isCreatingNotification
-  ) {
-    isCreatingNotification = true;
-    await CordovaNotifications.cancelNotification(notificationId.value);
+    if (
+      !triggered &&
+      isMobile.value &&
+      hasNotificationPermission.value &&
+      !isCreatingNotification
+    ) {
+      isCreatingNotification = true;
+      await CordovaNotifications.cancelNotification(notificationId.value);
 
-    notificationId.value = CordovaNotifications.createId();
+      notificationId.value = CordovaNotifications.createId();
 
-    await startNotification();
-  } else if (triggered) {
-    updateNotification();
+      await startNotification();
+    } else if (triggered) {
+      updateNotification();
+    }
   }
 
   const isPaused = activity.value.pauses.some((p) => !p.ended_at) || paused.value;
@@ -1423,6 +1461,7 @@ const startNow = async () => {
   ]);
 
   await startNotification();
+  await startLiveActivity();
   hasCreatedNotification.value = true;
 };
 
