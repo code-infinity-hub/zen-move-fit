@@ -1,6 +1,6 @@
 require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
 
-platform :ios, '14.0'
+platform :ios, '15.0'
 use_frameworks!
 
 # workaround to avoid Xcode caching of Pods that requires
@@ -13,9 +13,8 @@ def capacitor_pods
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'AnuradevCapacitorBackgroundMode', :path => '../../node_modules/@anuradev/capacitor-background-mode'
   pod 'CapacitorCommunitySqlite', :path => '../../node_modules/@capacitor-community/sqlite'
-  pod 'CapacitorFirebaseAnalytics', :path => '../../node_modules/@capacitor-firebase/analytics'
+  pod 'CapacitorFirebaseAnalytics/AnalyticsWithoutAdIdSupport', :path => '../../node_modules/@capacitor-firebase/analytics'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
-  pod 'CapacitorBackgroundRunner', :path => '../../node_modules/@capacitor/background-runner'
   pod 'CapacitorCamera', :path => '../../node_modules/@capacitor/camera'
   pod 'CapacitorDevice', :path => '../../node_modules/@capacitor/device'
   pod 'CapacitorFileTransfer', :path => '../../node_modules/@capacitor/file-transfer'
@@ -33,6 +32,7 @@ def capacitor_pods
   pod 'CapacitorSplashScreen', :path => '../../node_modules/@capacitor/splash-screen'
   pod 'CapawesomeCapacitorAppShortcuts', :path => '../../node_modules/@capawesome/capacitor-app-shortcuts'
   pod 'CapgoBackgroundGeolocation', :path => '../../node_modules/@capgo/background-geolocation'
+  pod 'CapgoCapacitorAppAttest', :path => '../../node_modules/@capgo/capacitor-app-attest'
   pod 'CapgoCapacitorDownloader', :path => '../../node_modules/@capgo/capacitor-downloader'
   pod 'CapgoCapacitorHealth', :path => '../../node_modules/@capgo/capacitor-health'
   pod 'CapgoCapacitorInAppReview', :path => '../../node_modules/@capgo/capacitor-in-app-review'

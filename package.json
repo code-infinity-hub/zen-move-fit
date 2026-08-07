@@ -10,7 +10,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix",
-    "run:android": "npm run build && cap copy android && cap run android"
+    "run:android": "npm run build && cap copy android && cap run android",
+    "run:ios": "npm run build-only && npx cap copy ios"
   },
   "dependencies": {
     "@anuradev/capacitor-background-mode": "^8.0.0",

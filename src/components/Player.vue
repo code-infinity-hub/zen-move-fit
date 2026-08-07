@@ -11,6 +11,8 @@
       :id="idPlayer"
       :data-poster="props.thumbnail"
       controls
+      playsinline
+      webkit-playsinline
     >
       <source
         v-for="(source, i) in props.videoId"
@@ -28,6 +30,7 @@ import Plyr from "plyr";
 import { useLocale } from "vuetify";
 import { v4 as uuidv4 } from "uuid";
 import { Device, Fullscreen, ScreenOrientation } from "@/mobile";
+import { eventBus } from "@/eventBus";
 
 interface Props {
   loop?: boolean,
@@ -88,6 +91,12 @@ onMounted(async () => {
           player.value!.pause();
           player.value!.muted = wasMuted;
         });
+
+      // Sai do fullscreen nativo do iOS zera o safe-area do WKWebView de forma transitória
+      (player.value!.media as HTMLVideoElement).addEventListener(
+        "webkitendfullscreen",
+        () => eventBus.emit("REFRESH_SAFE_AREA")
+      );
     }
 
     const yt = player.value?.embed;

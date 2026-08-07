@@ -339,15 +339,9 @@ document.addEventListener("deviceready", async () => {
   }
 
   // Configurações iniciais da tela
-  const { insets } = await SafeArea.getSafeAreaInsets();
+  await refreshSafeAreaInsets();
 
-  statusBarHeight.value = `${insets.top}px`;
-  navigationBarHeight.value = `${insets.bottom}px`;
-
-  root.style.setProperty("--top-saved", `${insets.top}px`);
-  root.style.setProperty("--top", `${insets.top}px`);
-  root.style.setProperty("--bottom-saved", `${insets.bottom}px`);
-  root.style.setProperty("--bottom", `${insets.bottom}px`);
+  SafeArea.addListener("safeAreaChanged", ({ insets }) => applySafeAreaInsets(insets));
 
   // Configurações OneSignal
   OneSignal.default.initialize(import.meta.env.VITE_ONESIGNAL_ID);
@@ -560,6 +554,7 @@ onMounted(async () => {
   eventBus.on("CREATE_PLAN", () => startCreatePlan.value = true);
   eventBus.on("NO_CONNECTION", () => router.push({ name: "no_connection" }));
   eventBus.on("SESSION_EXPIRED", () => logout(false));
+  eventBus.on("REFRESH_SAFE_AREA", () => refreshSafeAreaInsets());
   eventBus.on("SAVE_OFFLINE_ACTIVITY", () => saveActivityOffline());
   eventBus.on("UPDATE_APP_ICONS", () => createAppIcons());
   eventBus.on("SNACKBAR", ({ message, icon, color }) => {
@@ -626,6 +621,21 @@ onMounted(async () => {
 });
 
 /// METHODS
+const applySafeAreaInsets = (insets: { top: number, bottom: number }) => {
+  statusBarHeight.value = `${insets.top}px`;
+  navigationBarHeight.value = `${insets.bottom}px`;
+
+  root.style.setProperty("--top-saved", `${insets.top}px`);
+  root.style.setProperty("--top", `${insets.top}px`);
+  root.style.setProperty("--bottom-saved", `${insets.bottom}px`);
+  root.style.setProperty("--bottom", `${insets.bottom}px`);
+};
+
+const refreshSafeAreaInsets = async () => {
+  const { insets } = await SafeArea.getSafeAreaInsets();
+  applySafeAreaInsets(insets);
+};
+
 const saveActivityOffline = () => {
   if (intervalSaveActivity !== null) return;
   handleIntervalSaveActivityOffline();

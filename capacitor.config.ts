@@ -5,6 +5,7 @@ const config: CapacitorConfig = {
   appName: "Zen Move Fit",
   webDir: "dist",
   android: { useLegacyBridge: true },
+  ios: { scrollEnabled: false },
   plugins: {
     CapacitorHttp: { enabled: true },
     SplashScreen: { backgroundColor: "#0E1115" },

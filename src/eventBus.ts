@@ -40,6 +40,7 @@ export type Events = {
   OPEN_RESCUE_ACTIVITY: undefined,
   SESSION_EXPIRED: undefined,
   TAKE_SCREENSHOT: undefined,
+  REFRESH_SAFE_AREA: undefined,
 };
 
 export const eventBus = mitt<Events>();

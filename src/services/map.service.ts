@@ -4,6 +4,7 @@ import html2canvas from "html2canvas";
 import { Map } from "maplibre-gl";
 import { EventEmitterService } from "./event-emitter.service";
 import { eventBus } from "@/eventBus";
+import { Capacitor } from "@/mobile";
 import type { OrientationListenerEvent } from "@/mobile";
 import type { Marker, StyleSpecification, GeoJSONSource } from "maplibre-gl";
 import type { Maplibre, MapOnEvents, Point } from "@/types/global.type";
@@ -57,7 +58,12 @@ export class MapService {
       center: [lng, lat],
       zoom: this.defaultZoom,
       attributionControl: false,
-      canvasContextAttributes: { preserveDrawingBuffer: true }
+      canvasContextAttributes: { preserveDrawingBuffer: true },
+      transformRequest: (url) => {
+        if (Capacitor.getPlatform() === "ios") {
+          return { url: `${url}${url.includes("?") ? "&" : "?"}api_key=${import.meta.env.VITE_STADIA_API_KEY}` };
+        }
+      }
     });
 
     this.map.on("dragstart", () => this.isFollowing = false);

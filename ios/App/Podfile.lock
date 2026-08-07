@@ -1,0 +1,389 @@
+PODS:
+  - AnuradevCapacitorBackgroundMode (8.0.0):
+    - Capacitor
+  - Capacitor (8.3.4):
+    - CapacitorCordova
+  - CapacitorApp (8.1.0):
+    - Capacitor
+  - CapacitorCamera (8.2.0):
+    - Capacitor
+    - IONCameraLib (~> 1.0.4)
+  - CapacitorCommunitySqlite (8.1.0):
+    - Capacitor
+    - SQLCipher
+    - ZIPFoundation
+  - CapacitorCordova (8.3.4)
+  - CapacitorDevice (8.0.2):
+    - Capacitor
+  - CapacitorFilesystem (8.1.2):
+    - Capacitor
+    - IONFilesystemLib (~> 1.1.1)
+  - CapacitorFileTransfer (2.0.4):
+    - Capacitor
+    - IONFileTransferLib (~> 1.0.2)
+  - CapacitorFirebaseAnalytics/AnalyticsWithoutAdIdSupport (8.2.0):
+    - Capacitor
+    - FirebaseAnalytics/Core (~> 12.7.0)
+  - CapacitorGeolocation (8.1.0):
+    - Capacitor
+    - IONGeolocationLib (= 2.0.0)
+  - CapacitorHaptics (8.0.2):
+    - Capacitor
+  - CapacitorInappbrowser (3.0.3):
+    - Capacitor
+    - OSInAppBrowserLib (~> 2.3.2)
+  - CapacitorKeyboard (8.0.3):
+    - Capacitor
+  - CapacitorLiveUpdates (0.5.0):
+    - Capacitor
+    - IonicLiveUpdates (~> 0.5.7)
+  - CapacitorLocalNotifications (8.0.2):
+    - Capacitor
+  - CapacitorNativeSettings (8.1.0):
+    - Capacitor
+  - CapacitorNetwork (8.0.1):
+    - Capacitor
+  - CapacitorPluginSafeArea (5.0.0):
+    - Capacitor
+  - CapacitorPreferences (8.0.1):
+    - Capacitor
+  - CapacitorScreenOrientation (8.0.1):
+    - Capacitor
+  - CapacitorShare (8.0.1):
+    - Capacitor
+  - CapacitorSplashScreen (8.0.1):
+    - Capacitor
+  - CapawesomeCapacitorAppShortcuts (8.0.1):
+    - Capacitor
+  - CapgoBackgroundGeolocation (8.0.26):
+    - Capacitor
+  - CapgoCapacitorAppAttest (8.2.2):
+    - Capacitor
+  - CapgoCapacitorDownloader (8.1.31):
+    - Capacitor
+  - CapgoCapacitorHealth (8.4.7):
+    - Capacitor
+  - CapgoCapacitorInAppReview (8.2.2):
+    - Capacitor
+  - CapgoCapacitorPedometer (8.0.29):
+    - Capacitor
+  - CapgoCapacitorSpeechRecognition (8.1.3):
+    - Capacitor
+  - CordovaPlugins (8.3.4):
+    - CapacitorCordova
+  - CordovaPluginsResources (0.0.105)
+  - CordovaPluginsStatic (8.3.4):
+    - CapacitorCordova
+    - OneSignalXCFramework (= 5.5.0)
+  - FirebaseAnalytics/Core (12.7.0):
+    - FirebaseCore (~> 12.7.0)
+    - FirebaseInstallations (~> 12.7.0)
+    - GoogleAppMeasurement/Core (= 12.7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - FirebaseCore (12.7.0):
+    - FirebaseCoreInternal (~> 12.7.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/Logger (~> 8.1)
+  - FirebaseCoreInternal (12.7.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+  - FirebaseInstallations (12.7.0):
+    - FirebaseCore (~> 12.7.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
+    - PromisesObjC (~> 2.4)
+  - GoogleAppMeasurement/Core (12.7.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - GoogleUtilities/AppDelegateSwizzler (8.1.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Environment (8.1.2):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.1.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/MethodSwizzler (8.1.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Network (8.1.2):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Privacy
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (8.1.2)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.1.2)
+  - GoogleUtilities/Reachability (8.1.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/UserDefaults (8.1.2):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - IONCameraLib (1.0.5)
+  - IONFilesystemLib (1.1.2)
+  - IONFileTransferLib (1.0.3)
+  - IONGeolocationLib (2.0.0)
+  - IonicLiveUpdates (0.5.8)
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
+  - OneSignalXCFramework (5.5.0):
+    - OneSignalXCFramework/OneSignalComplete (= 5.5.0)
+  - OneSignalXCFramework/OneSignal (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalExtension
+    - OneSignalXCFramework/OneSignalLiveActivities
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalOutcomes
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalComplete (5.5.0):
+    - OneSignalXCFramework/OneSignal
+    - OneSignalXCFramework/OneSignalInAppMessages
+    - OneSignalXCFramework/OneSignalLocation
+  - OneSignalXCFramework/OneSignalCore (5.5.0)
+  - OneSignalXCFramework/OneSignalExtension (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalInAppMessages (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalOutcomes
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalLiveActivities (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalLocation (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalUser
+  - OneSignalXCFramework/OneSignalNotifications (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalExtension
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalOSCore (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+  - OneSignalXCFramework/OneSignalOutcomes (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+  - OneSignalXCFramework/OneSignalUser (5.5.0):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalNotifications
+    - OneSignalXCFramework/OneSignalOSCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OSInAppBrowserLib (2.3.2)
+  - PowerMode (5.0.0):
+    - Capacitor
+  - PromisesObjC (2.4.1)
+  - RdlaboCapacitorScreenshotEvent (8.0.0):
+    - Capacitor
+  - SQLCipher (4.10.0):
+    - SQLCipher/standard (= 4.10.0)
+  - SQLCipher/common (4.10.0)
+  - SQLCipher/standard (4.10.0):
+    - SQLCipher/common
+  - ZIPFoundation (0.9.20)
+
+DEPENDENCIES:
+  - "AnuradevCapacitorBackgroundMode (from `../../node_modules/@anuradev/capacitor-background-mode`)"
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
+  - "CapacitorCommunitySqlite (from `../../node_modules/@capacitor-community/sqlite`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorDevice (from `../../node_modules/@capacitor/device`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
+  - "CapacitorFileTransfer (from `../../node_modules/@capacitor/file-transfer`)"
+  - "CapacitorFirebaseAnalytics/AnalyticsWithoutAdIdSupport (from `../../node_modules/@capacitor-firebase/analytics`)"
+  - "CapacitorGeolocation (from `../../node_modules/@capacitor/geolocation`)"
+  - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorInappbrowser (from `../../node_modules/@capacitor/inappbrowser`)"
+  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorLiveUpdates (from `../../node_modules/@capacitor/live-updates`)"
+  - "CapacitorLocalNotifications (from `../../node_modules/@capacitor/local-notifications`)"
+  - CapacitorNativeSettings (from `../../node_modules/capacitor-native-settings`)
+  - "CapacitorNetwork (from `../../node_modules/@capacitor/network`)"
+  - CapacitorPluginSafeArea (from `../../node_modules/capacitor-plugin-safe-area`)
+  - "CapacitorPreferences (from `../../node_modules/@capacitor/preferences`)"
+  - "CapacitorScreenOrientation (from `../../node_modules/@capacitor/screen-orientation`)"
+  - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
+  - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
+  - "CapawesomeCapacitorAppShortcuts (from `../../node_modules/@capawesome/capacitor-app-shortcuts`)"
+  - "CapgoBackgroundGeolocation (from `../../node_modules/@capgo/background-geolocation`)"
+  - "CapgoCapacitorAppAttest (from `../../node_modules/@capgo/capacitor-app-attest`)"
+  - "CapgoCapacitorDownloader (from `../../node_modules/@capgo/capacitor-downloader`)"
+  - "CapgoCapacitorHealth (from `../../node_modules/@capgo/capacitor-health`)"
+  - "CapgoCapacitorInAppReview (from `../../node_modules/@capgo/capacitor-in-app-review`)"
+  - "CapgoCapacitorPedometer (from `../../node_modules/@capgo/capacitor-pedometer`)"
+  - "CapgoCapacitorSpeechRecognition (from `../../node_modules/@capgo/capacitor-speech-recognition`)"
+  - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
+  - CordovaPluginsResources (from `../capacitor-cordova-ios-plugins`)
+  - CordovaPluginsStatic (from `../capacitor-cordova-ios-plugins`)
+  - PowerMode (from `../../node_modules/power-mode`)
+  - "RdlaboCapacitorScreenshotEvent (from `../../node_modules/@rdlabo/capacitor-screenshot-event`)"
+
+SPEC REPOS:
+  trunk:
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreInternal
+    - FirebaseInstallations
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - IONCameraLib
+    - IONFilesystemLib
+    - IONFileTransferLib
+    - IONGeolocationLib
+    - IonicLiveUpdates
+    - nanopb
+    - OneSignalXCFramework
+    - OSInAppBrowserLib
+    - PromisesObjC
+    - SQLCipher
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  AnuradevCapacitorBackgroundMode:
+    :path: "../../node_modules/@anuradev/capacitor-background-mode"
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/@capacitor/app"
+  CapacitorCamera:
+    :path: "../../node_modules/@capacitor/camera"
+  CapacitorCommunitySqlite:
+    :path: "../../node_modules/@capacitor-community/sqlite"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorDevice:
+    :path: "../../node_modules/@capacitor/device"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
+  CapacitorFileTransfer:
+    :path: "../../node_modules/@capacitor/file-transfer"
+  CapacitorFirebaseAnalytics:
+    :path: "../../node_modules/@capacitor-firebase/analytics"
+  CapacitorGeolocation:
+    :path: "../../node_modules/@capacitor/geolocation"
+  CapacitorHaptics:
+    :path: "../../node_modules/@capacitor/haptics"
+  CapacitorInappbrowser:
+    :path: "../../node_modules/@capacitor/inappbrowser"
+  CapacitorKeyboard:
+    :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorLiveUpdates:
+    :path: "../../node_modules/@capacitor/live-updates"
+  CapacitorLocalNotifications:
+    :path: "../../node_modules/@capacitor/local-notifications"
+  CapacitorNativeSettings:
+    :path: "../../node_modules/capacitor-native-settings"
+  CapacitorNetwork:
+    :path: "../../node_modules/@capacitor/network"
+  CapacitorPluginSafeArea:
+    :path: "../../node_modules/capacitor-plugin-safe-area"
+  CapacitorPreferences:
+    :path: "../../node_modules/@capacitor/preferences"
+  CapacitorScreenOrientation:
+    :path: "../../node_modules/@capacitor/screen-orientation"
+  CapacitorShare:
+    :path: "../../node_modules/@capacitor/share"
+  CapacitorSplashScreen:
+    :path: "../../node_modules/@capacitor/splash-screen"
+  CapawesomeCapacitorAppShortcuts:
+    :path: "../../node_modules/@capawesome/capacitor-app-shortcuts"
+  CapgoBackgroundGeolocation:
+    :path: "../../node_modules/@capgo/background-geolocation"
+  CapgoCapacitorAppAttest:
+    :path: "../../node_modules/@capgo/capacitor-app-attest"
+  CapgoCapacitorDownloader:
+    :path: "../../node_modules/@capgo/capacitor-downloader"
+  CapgoCapacitorHealth:
+    :path: "../../node_modules/@capgo/capacitor-health"
+  CapgoCapacitorInAppReview:
+    :path: "../../node_modules/@capgo/capacitor-in-app-review"
+  CapgoCapacitorPedometer:
+    :path: "../../node_modules/@capgo/capacitor-pedometer"
+  CapgoCapacitorSpeechRecognition:
+    :path: "../../node_modules/@capgo/capacitor-speech-recognition"
+  CordovaPlugins:
+    :path: "../capacitor-cordova-ios-plugins"
+  CordovaPluginsResources:
+    :path: "../capacitor-cordova-ios-plugins"
+  CordovaPluginsStatic:
+    :path: "../capacitor-cordova-ios-plugins"
+  PowerMode:
+    :path: "../../node_modules/power-mode"
+  RdlaboCapacitorScreenshotEvent:
+    :path: "../../node_modules/@rdlabo/capacitor-screenshot-event"
+
+SPEC CHECKSUMS:
+  AnuradevCapacitorBackgroundMode: 6026824725ff7240d6b7f9085242ef9b240332e9
+  Capacitor: 64a14f6a0638fc6b6ec7c751b04fd86688c78596
+  CapacitorApp: a4d8d936cc4390859a3766f141048abe55d4076f
+  CapacitorCamera: a9b5f1a5d09e61b7a979e3510b87cdda99265d2f
+  CapacitorCommunitySqlite: f3d9be57fc49fa7245f7935c2be993e3243e53a8
+  CapacitorCordova: c07921bdcfec6f691bae22274446b4d606ebf6a4
+  CapacitorDevice: b50f119138a2b69a1e9213f4468d1e75e4239cca
+  CapacitorFilesystem: 7d3e3df84be4f0d999a5d6baa23aeb30c2de6450
+  CapacitorFileTransfer: a169098a8b783e40ef0c9e99874809df12fef0ce
+  CapacitorFirebaseAnalytics: 995c7d9e6bd6831777ddcf81da8924b89ca1f495
+  CapacitorGeolocation: a2009727714adfa58bf093300b15856aa59e4b7a
+  CapacitorHaptics: 4e1e84c2b74fb5918e403fb8f0e73a07d05937df
+  CapacitorInappbrowser: 22d5e81825942c167f4841c3e1f57aed7497ab4e
+  CapacitorKeyboard: ad22f33de28070c8e16ecb119084af06915724e2
+  CapacitorLiveUpdates: 3914a5a02fc18373d1b28de56606fae01ddd1052
+  CapacitorLocalNotifications: adb0776e74524387e48b9b683690fdf79f274753
+  CapacitorNativeSettings: 3eb6d229080d11431c7126c7aa241cd05ec3ff23
+  CapacitorNetwork: 7afc28ed4d9abe1d9801264fa485db32e4420546
+  CapacitorPluginSafeArea: 5c90e7423e8129641686afe8ae6084b65b20527e
+  CapacitorPreferences: 0fa33b3affebf12d96358b491ed7c2b39bec3270
+  CapacitorScreenOrientation: 07503c9d633377427f1e122449b06b1dbc992d10
+  CapacitorShare: 8a565649d321a05a1ae8b525b2a9b4f2d92c70ce
+  CapacitorSplashScreen: 1281f7df4d9b4a72bccab8d03e6b2bbd17dff122
+  CapawesomeCapacitorAppShortcuts: 97d1c4a9b0d68504e464abdea2d8240fbfa9d479
+  CapgoBackgroundGeolocation: d7b8e52d53b60f258d8b1560b34e652fa5945cf3
+  CapgoCapacitorAppAttest: 48fcd7378aba19d06722eeb7e09ae4c742e69871
+  CapgoCapacitorDownloader: 8569cf3327ae33a188fa3a0c729b9203570457b5
+  CapgoCapacitorHealth: 54036197eacc96f7eac694abdb46e8b04acead40
+  CapgoCapacitorInAppReview: 6b00ade672f107140b1f39087bf3314793adc7d1
+  CapgoCapacitorPedometer: 7d2f725f3890a5d312ecacb036c598aca3a51b45
+  CapgoCapacitorSpeechRecognition: f9df67dc4f3a705e4709dca726a145413957ecd2
+  CordovaPlugins: fb35f759f767aae5782df1d020f367e3c4269667
+  CordovaPluginsResources: da93847212bf7b16ba770e4d6c3e7dba820174c7
+  CordovaPluginsStatic: 91044e4a5c78ef240674685b9a1d015205f0373f
+  FirebaseAnalytics: e423129866107aeacf6010a280b9c9829f9ea50d
+  FirebaseCore: c7b57863ce0859281a66d16ca36d665c45d332b5
+  FirebaseCoreInternal: 571a2dd8c975410966199623351db3a3265c874d
+  FirebaseInstallations: 6d05424a046b68ca146b4de4376f05b4e9262fc3
+  GoogleAppMeasurement: 8f59e08efecfa1bcd57f0a56fab07d079366268c
+  GoogleUtilities: 766ace00c6b10d8148408f329d10c4f051931850
+  IONCameraLib: ecbd8ef0077d481df429cee267bbeb1a7b9bddd0
+  IONFilesystemLib: 21a63377696b2d8fab5632ecfb7d2ac67bddb68a
+  IONFileTransferLib: addbbf50405c163dcd74a7b1bd8c6f9302342be2
+  IONGeolocationLib: a5e40b54edc2ee9902036eda5aaa41ddf07bb68d
+  IonicLiveUpdates: 6dce1c9227726ba7c859be36b22c978685e5b75f
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  OneSignalXCFramework: 943852e7d70d719f73e9669d48620aeec1b93022
+  OSInAppBrowserLib: c21c8fa3d886654d2f553b9f1bded9d27a0530c7
+  PowerMode: f716309b2ac2e4520b3c98983616b074afdb33ee
+  PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
+  RdlaboCapacitorScreenshotEvent: ca3388c89d462a0d8c1a28f9e9d086f4823844bb
+  SQLCipher: eb79c64049cb002b4e9fcb30edb7979bf4706dfc
+  ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
+
+PODFILE CHECKSUM: cb4d24d7e9c7a0ca49696ba553824bf085d23705
+
+COCOAPODS: 1.16.2
