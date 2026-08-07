@@ -272,7 +272,11 @@ export const useSocialStore = defineStore("social", {
     },
     async SEND_MESSAGE(friendship_id: string, body: SendMessageBody): Promise<Response> {
       const response = await this.POST(`chats/${friendship_id}/message`, body);
-      if (!response.error) this.GET_UNREAD_MESSAGES();
+      if (!response.error) {
+        const message = response.form as Message;
+        this.messages.results.set(message.message_id, message);
+        this.GET_UNREAD_MESSAGES();
+      }
       return response;
     },
     RESET_UNREAD_MESSAGES() {
