@@ -27,6 +27,7 @@
 
       <div
         class="recenter bg-secondary pa-2 rounded-xl d-flex justify-center align-center text-body-2"
+        :style="{ bottom: recenterBottom }"
         v-else-if="recenter"
         @click="recenterMap"
       >
@@ -669,6 +670,8 @@ let timeoutDivInformation: null | number = null;
 
 const mapContent = useTemplateRef("map-content");
 const contentDiv = useTemplateRef("content");
+const recenterBottom = ref("36px");
+let panelResizeObserver: ResizeObserver | null = null;
 
 const detectNearbyRunners = ref(false);
 
@@ -954,7 +957,24 @@ onMounted(async () => {
   });
 
   setTimeout(async () => {
-    mapContent.value!.style.height = `calc(100% - ${(contentDiv.value as any)!.$el!.clientHeight}px + 20px)`;
+    const panelEl = (contentDiv.value as any)!.$el as HTMLElement;
+    const mapContentOverlap = 20;
+    const recenterGapAbovePanel = 16;
+
+    const updateMapContentHeight = () => {
+      mapContent.value!.style.height = `calc(100% - ${panelEl.clientHeight}px + ${mapContentOverlap}px)`;
+    };
+
+    const updateRecenterBottom = () => {
+      recenterBottom.value = `${mapContentOverlap + recenterGapAbovePanel}px`;
+    };
+
+    updateMapContentHeight();
+    updateRecenterBottom();
+
+    panelResizeObserver = new ResizeObserver(updateMapContentHeight);
+    panelResizeObserver.observe(panelEl);
+
     mapLoaded.value = false;
 
     const geolocationPermission = await geolocationService.checkPermissions();
@@ -991,6 +1011,8 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
+  panelResizeObserver?.disconnect();
+
   eventBus.off("LOCATION", traceRoute);
   eventBus.off("BACK_BUTTON", backButton);
 
@@ -1535,7 +1557,6 @@ div#progress-activity
     width: 50px
     height: 50px
     position: absolute
-    bottom: 7%
     right: 2%
     z-index: 10000
 
