@@ -4,31 +4,20 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>pt</string>
-
 	<key>CFBundleDisplayName</key>
 	<string>Zen Move Fit</string>
-
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
-
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
-
-	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
-
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -40,95 +29,30 @@
 			</array>
 		</dict>
 	</array>
-
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:post.zenmovefit.com.br</string>
-		<string>applinks:activity.zenmovefit.com.br</string>
-	</array>
-
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
-
-	<key>UIRequiresFullScreen</key>
-	<true/>
-
-	<key>UIStatusBarHidden</key>
-	<true/>
-
-	<key>UIFileSharingEnabled</key>
-	<true/>
-
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
-
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
-
-	<key>NSSupportsLiveActivities</key>
-	<true/>
-
 	<key>NSCameraUsageDescription</key>
 	<string>O app precisa de acesso à câmera para capturar fotos e vídeos das suas atividades e publicações.</string>
-
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>O app precisa de acesso à sua biblioteca de fotos para selecionar imagens para o perfil, publicações e cards de compartilhamento.</string>
-
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>O app precisa de permissão para salvar fotos e vídeos na sua biblioteca.</string>
-
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>O app precisa de acesso à sua localização enquanto estiver em uso para registrar suas atividades e treinos.</string>
-
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>O app precisa de acesso à sua localização para registrar suas atividades e treinos mesmo com a tela bloqueada ou em segundo plano</string>
-
-	<key>NSMotionUsageDescription</key>
-	<string>O app precisa de acesso aos dados de movimento para contar seus passos e monitorar suas atividades.</string>
-
 	<key>NSHealthShareUsageDescription</key>
 	<string>O app lê seus dados de saúde para personalizar suas atividades e acompanhar seu progresso.</string>
-
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>O app grava no Saúde os dados das atividades que você realiza na Zen Move Fit.</string>
-
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>O app precisa de acesso à sua localização para registrar suas atividades e treinos mesmo com a tela bloqueada ou em segundo plano</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O app precisa de acesso à sua localização enquanto estiver em uso para registrar suas atividades e treinos.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>O app precisa de acesso ao microfone para gravar áudio e usar recursos de voz.</string>
-
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>O app precisa de acesso ao reconhecimento de fala para converter sua voz em texto.</string>
-
+	<key>NSMotionUsageDescription</key>
+	<string>O app precisa de acesso aos dados de movimento para contar seus passos e monitorar suas atividades.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>O app precisa de permissão para salvar fotos e vídeos na sua biblioteca.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>O app precisa de acesso à sua biblioteca de fotos para selecionar imagens para o perfil, publicações e cards de compartilhamento.</string>
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array>
 		<dict>
@@ -139,7 +63,6 @@
 				<string>C617.1</string>
 			</array>
 		</dict>
-
 		<dict>
 			<key>NSPrivacyAccessedAPIType</key>
 			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
@@ -148,6 +71,49 @@
 				<string>CA92.1</string>
 			</array>
 		</dict>
+	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>O app precisa de acesso ao reconhecimento de fala para converter sua voz em texto.</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:post.zenmovefit.com.br</string>
+		<string>applinks:activity.zenmovefit.com.br</string>
 	</array>
 </dict>
 </plist>

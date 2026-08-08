@@ -753,6 +753,7 @@ const handleIntervalSaveActivityOffline = () => {
             title: message,
             text: t("$vuetify.message.your_offline_activities_have_been_successfully_synchronized"),
             channel_id: "activity_sound",
+            sound: "notification.wav",
           });
         }
       }
@@ -862,7 +863,8 @@ const handleSocketEvents = () => {
         title: message.name,
         text: message.type === "TEXT" ? message.text : t(`$vuetify.label.${message.type.toLowerCase()}_message`),
         actions: "REPLY",
-        channel_id: "activity_sound"
+        channel_id: "activity_sound",
+        sound: "notification.wav"
       });
     }
 

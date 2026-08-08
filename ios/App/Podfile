@@ -56,6 +56,13 @@ target 'App' do
   pod 'FirebaseAnalytics/Core', '~> 12.7.0'
 end
 
+# Extensão de notificação rica do OneSignal (imagens/anexos em push). Linkada via
+# CocoaPods (não SPM) pra ficar consistente com o resto do projeto, já que o
+# download dos artefatos binários do pacote SPM do OneSignal falhava nesse ambiente.
+target 'OneSignalNotificationServiceExtension' do
+  pod 'OneSignalXCFramework', '>= 5.0', '< 6.0'
+end
+
 post_install do |installer|
   assertDeploymentTarget(installer)
 end

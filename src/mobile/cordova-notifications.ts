@@ -20,7 +20,8 @@ interface CreateNotification {
   android_auto_cancel?: boolean,
   ongoing?: boolean,
   actions?: string,
-  channel_id?: typeof channelsIds[number]
+  channel_id?: typeof channelsIds[number],
+  sound?: string
 };
 
 interface EventCallback {

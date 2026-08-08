@@ -229,6 +229,7 @@ DEPENDENCIES:
   - CordovaPluginsResources (from `../capacitor-cordova-ios-plugins`)
   - CordovaPluginsStatic (from `../capacitor-cordova-ios-plugins`)
   - FirebaseAnalytics/Core (~> 12.7.0)
+  - OneSignalXCFramework (< 6.0, >= 5.0)
   - PowerMode (from `../../node_modules/power-mode`)
   - "RdlaboCapacitorScreenshotEvent (from `../../node_modules/@rdlabo/capacitor-screenshot-event`)"
 
@@ -378,6 +379,6 @@ SPEC CHECKSUMS:
   SQLCipher: eb79c64049cb002b4e9fcb30edb7979bf4706dfc
   ZIPFoundation: dfd3d681c4053ff7e2f7350bc4e53b5dba3f5351
 
-PODFILE CHECKSUM: 12b8d0acadf5c1040359af70124d95d82e316aac
+PODFILE CHECKSUM: cd130b15667979f41768ad71126824bc5cedc1dd
 
 COCOAPODS: 1.16.2

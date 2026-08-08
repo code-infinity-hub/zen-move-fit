@@ -1,6 +1,8 @@
 import UIKit
 import Capacitor
 import CapawesomeCapacitorAppShortcuts
+import SwiftUI
+import OneSignalFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
