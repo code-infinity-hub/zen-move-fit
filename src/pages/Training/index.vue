@@ -461,7 +461,7 @@
                         <Player
                           class="h-100"
                           v-show="video_loaded"
-                          :video-id="videoSource === 'youtube' ? videoUrl : [{ src: videoUrl, type: '' }]"
+                          :video-id="videoSources"
                           :start-second="videoTime"
                           @load="video_loaded = true"
                         />
@@ -798,9 +798,10 @@ const thumb = computed(() => {
   return `https://img.youtube.com/vi/${id || "NONE"}/hqdefault.jpg`;
 });
 const videoUrl = computed(() => {
-  const exercise = currentExercise.value!;
+  const exercise = currentExercise.value;
 
-  if (videoSource.value === "youtube") return extractId(exercise.video_link || "");
+  if (!exercise) return "";
+  if (videoSource.value === "youtube") return extractId(exercise.video_link || "") || "";
 
   return `${import.meta.env.VITE_AWS_CLOUDFRONT_URL}exercises/${exercise?.exercise_id}/${videoGender.value}_front.mp4`;
 });
@@ -810,6 +811,7 @@ const videoTime = computed(() => {
     extractTime(exercise.video_link || "") :
     0;
 });
+const videoSources = computed(() => [{ src: videoUrl.value, type: "" }]);
 const isInProgress = computed(() => {
   const isPaused = activity.value.pauses.some((p) => !p.ended_at) || paused.value;
   if (!started.value || isPaused) return false;
@@ -1390,6 +1392,11 @@ const nextStep = (jump: boolean) => {
 
 const endActivity = () => {
   const endedAt = dayjs().toISOString();
+
+  if (interval.value !== null) {
+    clearInterval(interval.value);
+    interval.value = null;
+  }
 
   CordovaNotifications.cancelNotification(notificationId.value);
   endLiveActivity();

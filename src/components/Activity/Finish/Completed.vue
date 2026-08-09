@@ -70,7 +70,7 @@
         </template>
       </div>
 
-      <div class="cta" id="cta">
+      <div class="cta d-flex flex-column ga-3" id="cta">
         <v-btn
           block
           color="primary"
@@ -80,6 +80,15 @@
           <v-icon class="mr-2">mdi-share</v-icon>
           {{ t("$vuetify.label.share_the_result") }}
         </v-btn>
+
+        <v-btn
+          v-if="showBackButton"
+          block
+          variant="tonal"
+          color="primary"
+          class="text-none pa-7 text-h6 text-black font-weight-bold"
+          @click="emit('back')"
+        >{{ t("$vuetify.label.back_button") }}</v-btn>
       </div>
     </div>
   </div>
@@ -98,6 +107,7 @@ import {
   Sprite
 } from "pixi.js";
 import {
+  Device,
   Haptics,
   ImpactStyle,
   Share
@@ -117,9 +127,12 @@ type coords = { x: number, y: number };
 const { t } = useLocale();
 const { formatTime, fromSecondsToMinutes } = date();
 const { formatNumber } = useFormatNumber();
+const emit = defineEmits(["back"]);
 const props = defineProps<{ activity: Activity }>();
 
 let shakeRafId: number | null = null;
+
+const showBackButton = ref(false);
 
 const app = new Application();
 
@@ -266,6 +279,9 @@ onMounted(async () => {
     // Confetti
     updateConfetti(dt);
   });
+
+  const device = await Device.getInfo();
+  if (device.platform === "ios") showBackButton.value = true;
 });
 
 /// METHODS

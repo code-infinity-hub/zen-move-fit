@@ -605,6 +605,7 @@
     <Completed
       v-if="showUI"
       :activity="activity"
+      @back="backButton"
     />
 
     <!-- BOTTOM SHEET DE DESISTIR DA ATIVIDADE -->
