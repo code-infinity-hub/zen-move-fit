@@ -85,12 +85,11 @@ onMounted(async () => {
       const wasMuted = player.value!.muted;
       player.value!.muted = true;
 
-      Promise.resolve(player.value!.play())
-        .catch(() => {})
-        .finally(() => {
-          player.value!.pause();
-          player.value!.muted = wasMuted;
-        });
+      // Toca e pausa sem aguardar a promise resolver, só pra pintar o primeiro frame como
+      // "poster" (evita a tela cinza do Android antes do play) sem deixar o vídeo tocar de fato
+      Promise.resolve(player.value!.play()).catch(() => {});
+      player.value!.pause();
+      player.value!.muted = wasMuted;
 
       // Sai do fullscreen nativo do iOS zera o safe-area do WKWebView de forma transitória
       ((player.value as any)!.media as HTMLVideoElement).addEventListener(
