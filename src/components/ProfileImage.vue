@@ -3,13 +3,13 @@
     :class="[
       'image-profile background d-flex justify-center align-center',
       !loading && props.loadedBorder ? `border-sm border-opacity-100 border-${props.loadedBorder}` : '',
-      props.image ? '' : 'bg-theme-primary-15'
+      profile ? '' : 'bg-theme-primary-15'
     ]"
     :style="{
       width: props.width || props.size,
       height: props.height || props.size,
       containerType: 'inline-size',
-      ...(props.image && { backgroundImage: `url(${profile})` })
+      ...(profile && { backgroundImage: `url(${profile})` })
     }"
   >
     <v-skeleton-loader

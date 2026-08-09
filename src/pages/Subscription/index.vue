@@ -3,23 +3,39 @@
     <!-- SEM ASSINATURA -->
     <div
       v-if="!accountsStore.isSubscriber"
-      class="w-100 h-100 d-flex flex-column align-center justify-center px-5 ga-7"
+      class="w-100 h-100 d-flex flex-column"
     >
-      <div class="size-7rem rounded-circle d-flex justify-center align-center bg-theme-primary-15">
-        <v-icon color="primary" :size="65">
-          mdi-package-variant
-        </v-icon>
+      <header class="heading border-bottom-tertiary d-flex align-center">
+        <v-btn
+          icon=""
+          size="x-small"
+          color="tertiary"
+          class="mr-4"
+          @click="backButton"
+        >
+          <v-icon :size="18">
+            mdi-arrow-left
+          </v-icon>
+        </v-btn>
+      </header>
+
+      <div class="flex-fill d-flex flex-column align-center justify-center px-5 ga-7">
+        <div class="size-7rem rounded-circle d-flex justify-center align-center bg-theme-primary-15">
+          <v-icon color="primary" :size="65">
+            mdi-package-variant
+          </v-icon>
+        </div>
+
+        <p class="text-center font-weight-bold text-h5 font-space-grotesk">
+          {{ t("$vuetify.message.no_active_subscription") }}
+        </p>
+
+        <v-btn
+          color="primary"
+          class="w-100 pa-7 d-flex text-h6 font-weight-bold"
+          @click="eventBus.emit('START_SUBSCRIPTION')"
+        >{{ t("$vuetify.label.subscribe_now") }}</v-btn>
       </div>
-
-      <p class="text-center font-weight-bold text-h5 font-space-grotesk">
-        {{ t("$vuetify.message.no_active_subscription") }}
-      </p>
-
-      <v-btn
-        color="primary"
-        class="w-100 pa-7 d-flex text-h6 font-weight-bold"
-        @click="eventBus.emit('START_SUBSCRIPTION')"
-      >{{ t("$vuetify.label.subscribe_now") }}</v-btn>
     </div>
 
     <!-- ACESSO VITALÍCIO -->
