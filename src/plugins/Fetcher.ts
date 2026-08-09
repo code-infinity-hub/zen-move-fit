@@ -48,12 +48,14 @@ const renewSession = async (): Promise<boolean> => {
 export const checkAvailability = async (): Promise<Availability> => {
   try {
     const { status, data } = await CapacitorHttp.request({
-      url: `${import.meta.env.VITE_AWS_CLOUDFRONT_URL}app-availability.json`,
+      url: `${import.meta.env.VITE_AWS_CLOUDFRONT_URL}app-availability.json?ts=${Date.now()}`,
       method: "GET"
     });
 
     if (status === 200) return data;
-  } catch { };
+  } catch (e) { 
+    console.error("Error app availability:", e);
+  };
 
   return {
     available: true,
