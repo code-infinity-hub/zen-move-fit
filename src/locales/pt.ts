@@ -1071,6 +1071,7 @@ export const pt = {
     total: "Total",
     total_earned: "Total ganho",
     total_withdrawn: "Total sacado",
+    trail_running: "Corrida em trilha",
     train_anyway: "Treinar mesmo assim",
     training: "Treinos",
     training_completed_today: "Treino concluído hoje",

@@ -1071,6 +1071,7 @@ export const en = {
     total: "Total",
     total_earned: "Total earned",
     total_withdrawn: "Total withdrawn",
+    trail_running: "Trail running",
     train_anyway: "Train anyway",
     training: "Training",
     training_completed_today: "Training completed today",
