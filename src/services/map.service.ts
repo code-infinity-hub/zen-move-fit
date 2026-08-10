@@ -219,6 +219,9 @@ export class MapService {
       position: relative;
       z-index: 999;
       pointer-events: none;
+      touch-action: none;
+      -webkit-user-select: none;
+      user-select: none;
     `;
 
     el.innerHTML = `
@@ -361,6 +364,8 @@ export class MapService {
       background: #48F26D;
       border: 3px solid white;
       box-shadow: 0 0 20px rgba(72, 242, 109, 0.5);
+      pointer-events: none;
+      touch-action: none;
     `;
 
     this.startMarker = new maplibregl.Marker({
@@ -392,6 +397,8 @@ export class MapService {
       background-size: cover;
       border: 3px solid white;
       box-shadow: 0 0 25px rgba(0,0,0,0.45);
+      pointer-events: none;
+      touch-action: none;
     `;
 
     this.finishMarker = new maplibregl.Marker({

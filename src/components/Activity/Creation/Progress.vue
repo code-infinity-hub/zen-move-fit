@@ -708,7 +708,7 @@ const coords = ref<LocationPoint[]>([]);
 const root = document.documentElement;
 
 const mapContentOverlap = 20;
-const recenterGapAbovePanel = 16;
+const recenterGapAbovePanel = 24;
 
 /// COMPUTED
 const account = computed(() => accountsStore.account);
@@ -924,6 +924,8 @@ watch(detectNearbyRunners, async (val) => {
 });
 
 watch(contentDiv, () => bindPanelResizeObserver());
+
+watch([isRunning, recenter], () => nextTick(() => bindPanelResizeObserver()));
 
 watch(precision, (val) => {
   if (!started.value) {
