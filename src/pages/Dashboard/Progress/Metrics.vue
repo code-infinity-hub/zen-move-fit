@@ -869,7 +869,7 @@ const takePicture = async () => {
   eventBus.emit("SET_LOADER", { enabled: true });
   try {
     const { base64, format, mimetype } = await mediaService.takePicture();
-    savePhoto(base64, format, mimetype);
+    await savePhoto(base64, format, mimetype);
   } catch (e: any) {
     eventBus.emit("SNACKBAR", {
       message: e?.code ? t(`$vuetify.errors_camera.${e?.code}`) : e?.message
@@ -884,7 +884,7 @@ const selectPhotos = async () => {
   try {
     const results = await mediaService.getFiles("Photo", 1);
     const { base64, format, mimetype } = results[0]!;
-    savePhoto(base64, format, mimetype);
+    await savePhoto(base64, format, mimetype);
   } catch (e: any) {
     eventBus.emit("SNACKBAR", {
       message: e?.code ? t(`$vuetify.errors_camera.${e?.code}`) : e?.message

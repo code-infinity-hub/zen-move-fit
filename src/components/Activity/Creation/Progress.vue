@@ -707,6 +707,9 @@ const coords = ref<LocationPoint[]>([]);
 
 const root = document.documentElement;
 
+const mapContentOverlap = 20;
+const recenterGapAbovePanel = 16;
+
 /// COMPUTED
 const account = computed(() => accountsStore.account);
 const time = computed(() => formatTime(activity.value.duration_seconds, true));
@@ -920,6 +923,8 @@ watch(detectNearbyRunners, async (val) => {
   }
 });
 
+watch(contentDiv, () => bindPanelResizeObserver());
+
 watch(precision, (val) => {
   if (!started.value) {
     if (val > 15) {
@@ -960,23 +965,8 @@ onMounted(async () => {
   });
 
   setTimeout(async () => {
-    const panelEl = (contentDiv.value as any)!.$el as HTMLElement;
-    const mapContentOverlap = 20;
-    const recenterGapAbovePanel = 16;
-
-    const updateMapContentHeight = () => {
-      mapContent.value!.style.height = `calc(100% - ${panelEl.clientHeight}px + ${mapContentOverlap}px)`;
-    };
-
-    const updateRecenterBottom = () => {
-      recenterBottom.value = `${mapContentOverlap + recenterGapAbovePanel}px`;
-    };
-
-    updateMapContentHeight();
-    updateRecenterBottom();
-
-    panelResizeObserver = new ResizeObserver(updateMapContentHeight);
-    panelResizeObserver.observe(panelEl);
+    bindPanelResizeObserver();
+    recenterBottom.value = `${mapContentOverlap + recenterGapAbovePanel}px`;
 
     mapLoaded.value = false;
 
@@ -1039,6 +1029,23 @@ onBeforeUnmount(() => {
 });
 
 /// METHODS
+const updateMapContentHeight = (panelEl: HTMLElement) => {
+  mapContent.value!.style.height = `calc(100% - ${panelEl.clientHeight}px + ${mapContentOverlap}px)`;
+};
+
+const bindPanelResizeObserver = () => {
+  panelResizeObserver?.disconnect();
+
+  const panelEl = (contentDiv.value as any)?.$el as HTMLElement | undefined;
+
+  if (!panelEl) return;
+
+  updateMapContentHeight(panelEl);
+
+  panelResizeObserver = new ResizeObserver(() => updateMapContentHeight(panelEl));
+  panelResizeObserver.observe(panelEl);
+};
+
 const collapse = () => expanded.value = false;
 
 const startInterval = async () => {
