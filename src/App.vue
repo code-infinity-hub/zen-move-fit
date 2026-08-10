@@ -64,6 +64,7 @@ import { useSocialStore } from "@/stores/social";
 import { eventBus } from "@/eventBus";
 import { fileToBase64 } from "@/utils";
 import { useLogout } from "@/composables";
+import { unlockAudioContext } from "@/composables/use-game-sounds";
 import { usePersistentSession } from "@/plugins/usePersistentSession";
 import { attestationService } from "@/services/attestation.service";
 import { MapService } from "@/services/map.service";
@@ -549,6 +550,13 @@ onMounted(async () => {
   root.style.setProperty("--top", "0px");
   root.style.setProperty("--bottom-saved", "0px");
   root.style.setProperty("--bottom", "0px");
+
+  // iOS/WKWebView only allows sound to start from a real user gesture. Achievement/chest sounds
+  // are triggered by server push events (no gesture of their own), so unlock the shared
+  // AudioContext on the very first tap of the session — it then stays usable for the rest of it.
+  ["touchstart", "touchend", "click"].forEach((evt) => {
+    document.addEventListener(evt, unlockAudioContext, { once: true, passive: true });
+  });
 
   // Handlers eventBus
   eventBus.on("SET_FULLSCREEN", ({ enabled }) => isFullscreen.value = enabled);

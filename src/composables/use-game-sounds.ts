@@ -2,7 +2,7 @@ import { type ToneOptions } from "@/types/global.type";
 
 let ctx: AudioContext | null = null;
 
-const getCtx = (): AudioContext | null => {
+export const getSharedAudioContext = (): AudioContext | null => {
   try {
     const Ctor = window.AudioContext || (window as any).webkitAudioContext;
     if (!Ctor) return null;
@@ -14,6 +14,16 @@ const getCtx = (): AudioContext | null => {
   } catch {
     return null;
   }
+};
+
+const getCtx = getSharedAudioContext;
+
+// iOS/WKWebView keeps the AudioContext suspended until it's resumed from inside a genuine,
+// synchronous user gesture. Sounds triggered later by server events (achievement unlocked,
+// chest granted) have no gesture of their own, so they silently produce no audio unless the
+// context was already unlocked earlier by a real tap. Call this once, early, from any tap.
+export const unlockAudioContext = () => {
+  getSharedAudioContext();
 };
 
 const tone = (audio: AudioContext, { freq, at = 0, dur = 0.15, type = "sine", vol = 0.2, slideTo }: ToneOptions) => {

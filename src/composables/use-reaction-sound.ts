@@ -1,18 +1,12 @@
+import { getSharedAudioContext } from "./use-game-sounds";
+
 export const useReactionSound = () => {
-  let audioContext: AudioContext | null = null;
-
-  const getContext = (): AudioContext => {
-    if (!audioContext) {
-      audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-    }
-    return audioContext;
-  };
-
   const playReactionSound = () => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     try {
-      const ctx = getContext();
+      const ctx = getSharedAudioContext();
+      if (!ctx) return;
 
       const oscillator = ctx.createOscillator();
       const gainNode = ctx.createGain();
